@@ -1,6 +1,6 @@
 # CST8507 Assignment 2
 
-#  Olympic History RAG Assistant
+##  Olympic History RAG Assistant
 
 This project is a **Retrieval-Augmented Generation (RAG) system** that allows users to chat with a local AI about Olympic history.  
 It uses a Wikipedia text corpus and a Kaggle dataset to provide accurate, context-based answers using **Ollama** and **LangChain Classic**.
@@ -27,27 +27,27 @@ Before setup, ensure you have the following installed:
 Open PowerShell and run:
 
 
-# Create virtual environment
+### Create virtual environment
 ```bash
 python -m venv venv
 ```
 
-# Activate environment
+### Activate environment
 ```bash
 \venv\Scripts\Activate
 ```
 
-# Install dependencies
+### Install dependencies
 ```bash
 pip install streamlit pandas langchain-community langchain-huggingface langchain-chroma langchain-text-splitters langchain-ollama langchain-classic
 ```
 
-# pull ollama
+### pull ollama
 ```bash
 ollama pull qwen2.5:0.5b
 ```
 
-# run front ui
+### run front ui
 ```bash
 streamlit run app.py
 ```
