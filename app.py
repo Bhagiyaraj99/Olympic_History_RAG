@@ -11,7 +11,7 @@ from langchain_ollama import OllamaLLM
 from langchain_classic.chains import RetrievalQA
 
 class OlympicRAGSystem:
-    def __init__(self, data_dir="data/", model_name="qwen2.5:0.5b"):
+    def __init__(self, data_dir="data/", model_name="qwen2.5:1.5b"):
         self.data_dir = data_dir
         self.model_name = model_name
         self.vector_db_path = "vector_db"
@@ -43,14 +43,14 @@ class OlympicRAGSystem:
             # Load Text Files (Fixes the RuntimeError with encoding)
             txt_loader = DirectoryLoader(
                 self.data_dir, 
-                glob="*.txt", 
+                glob="*_clean.txt", 
                 loader_cls=TextLoader,
                 loader_kwargs={'encoding': 'utf-8'}
             )
             all_documents.extend(txt_loader.load())
 
             # Load CSV Files (Kaggle Dataset)
-            csv_files = [f for f in os.listdir(self.data_dir) if f.endswith('.csv')]
+            csv_files = [f for f in os.listdir(self.data_dir) if f.endswith('_clean.csv')]
             for csv_file in csv_files:
                 csv_path = os.path.join(self.data_dir, csv_file)
                 loader = CSVLoader(file_path=csv_path, encoding="utf-8")
