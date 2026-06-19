@@ -1,5 +1,5 @@
-# CST8507 Assignment 2
-## Olympic History RAG Assistant
+
+# Olympic History RAG Assistant
 
 This project is a **Retrieval-Augmented Generation (RAG) system** that allows users to 
 chat with a local AI about Olympic history. It uses a Wikipedia text corpus and a Kaggle 
